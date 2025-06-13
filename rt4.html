@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mockup de Sitio Web Responsivo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+        }
+        nav {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap; /* Permite que los elementos se ajusten en varias líneas si es necesario */
+        }
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+        .services {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap; /* Permite que los servicios se ajusten en varias líneas */
+            margin-top: 20px;
+        }
+        .service {
+            background-color: white;
+            border-radius: 5px;
+            padding: 15px;
+            width: 30%;
+            margin-bottom: 20px; /* Espacio entre filas */
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Consultas de medios para pantallas más pequeñas */
+        @media (max-width: 768px) {
+            .service {
+                width: 45%; /* Dos servicios por fila */
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                flex-direction: column; /* Cambia la dirección a columna en pantallas pequeñas */
+                align-items: center; /* Centra los elementos */
+                text-align: center; /* Centra el texto */
+            }
+            .service {
+                width: 100%; /* Un servicio por fila */
+                margin-bottom: 15px; /* Espacio entre servicios */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <div>Logo</div>
+        <div>Inicio</div>
+        <div>Servicios</div>
+        <div>Porfolio</div>
+        <div>Contacto</div>
+    </nav>
+</header>
+
+<div class="content">
+    <h1>Lorem Ipsum Ipsum Sit</h1>
+    <h2>Ipsum Sit</h2>
+    <p>Lorem Ipsum Dolor Sit Amet Consectetur ipsum Dolor Sit Amet.</p>
+    <button>Mas Informacion</button>
+
+   
+</div>
+
+</body>
+</html>
+
+

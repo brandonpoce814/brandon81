@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aprender Python</title>
+  <link rel="stylesheet" href="ESTILOS3.CSS">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #4a90e2, #7f3fbf);
+      color: white;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow-x: hidden;
+    }
+
+    .contenido {
+      max-width: 900px;
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 15px;
+      backdrop-filter: blur(6px);
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.5em;
+      margin-bottom: 15px;
+    }
+
+    h2 {
+      margin-top: 30px;
+      color: #ffeeff;
+    }
+
+    p {
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+
+    ul {
+      list-style: disc;
+      padding-left: 20px;
+    }
+
+    img, video {
+      max-width: 100%;
+      border-radius: 10px;
+      margin-top: 20px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 1s ease;
+    }
+
+    img.visible, video.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
+      .contenido {
+        padding: 15px;
+      }
+
+      h1 {
+        font-size: 2em;
+      }
+    }
+
+    canvas#fondo {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="fondo"></canvas>
+
+  <div class="contenido">
+    <h1>¿Cómo Aprender a Programar en Python?</h1>
+    <img src="https://www.python.org/static/community_logos/python-logo.png" alt="Logo de Python">
+
+    <p>Python es uno de los lenguajes de programación más populares y fáciles de aprender. Ideal para principiantes, permite desarrollar desde scripts simples hasta aplicaciones web complejas.</p>
+
+    <h2>🔹 ¿Por qué aprender Python?</h2>
+    <ul>
+      <li>Sintaxis clara y fácil de leer.</li>
+      <li>Gran comunidad y recursos gratuitos.</li>
+      <li>Aplicable en ciencia de datos, web, automatización, IA y más.</li>
+    </ul>
+
+    <video controls width="400" height="400" autoplay loop muted src="Video de WhatsApp 2025-05-27 a las 21.21.10_cf6ced39.mp4"></video>
+
+    <h2>🔹 Pasos para comenzar</h2>
+    <ul>
+      <li>1️⃣ Instala Python desde <a href="https://python.org" target="_blank" style="color: #ffebff;">python.org</a></li>
+      <li>2️⃣ Usa un editor como VS Code o PyCharm.</li>
+      <li>3️⃣ Aprende lo básico: variables, condicionales, loops, funciones.</li>
+      <li>4️⃣ Practica con ejercicios diarios o mini proyectos.</li>
+      <li>5️⃣ Explora librerías como <code>pandas</code>, <code>flask</code> o <code>pygame</code>.</li>
+    </ul>
+
+    <h2>🔹 Recursos recomendados</h2>
+    <ul>
+      <li><a href="https://www.freecodecamp.org/espanol/" target="_blank" style="color: #ffebff;">FreeCodeCamp en Español</a></li>
+      <li><a href="https://www.learnpython.org/" target="_blank" style="color: #ffebff;">LearnPython.org</a></li>
+      <li><a href="https://www.youtube.com/watch?v=kqtD5dpn9C8" target="_blank" style="color: #ffebff;">Curso Python - YouTube</a></li>
+    </ul>
+
+    <img src="maxresdefault (1).jpg" alt="Ilustración de programación Python">
+  </div>
+
+<script>
+  // Partículas animadas de fondo
+  const canvas = document.getElementById('fondo');
+  const ctx = canvas.getContext('2d');
+  let width = canvas.width = window.innerWidth;
+  let height = canvas.height = window.innerHeight;
+
+  let particulas = [];
+  for (let i = 0; i < 50; i++) {
+    particulas.push({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      r: Math.random() * 2 + 1,
+      dx: (Math.random() - 0.5) * 0.5,
+      dy: (Math.random() - 0.5) * 0.5
+    });
+  }
+
+  function animar() {
+    ctx.clearRect(0, 0, width, height);
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.15)';
+    particulas.forEach(p => {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fill();
+      p.x += p.dx;
+      p.y += p.dy;
+
+      if (p.x < 0 || p.x > width) p.dx *= -1;
+      if (p.y < 0 || p.y > height) p.dy *= -1;
+    });
+    requestAnimationFrame(animar);
+  }
+
+  animar();
+
+  window.addEventListener('resize', () => {
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
+  });
+
+  // Animaciones en scroll para imágenes y videos
+  const elementos = document.querySelectorAll('img, video');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  elementos.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

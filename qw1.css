@@ -1,0 +1,93 @@
+/* Reset de márgenes y paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+header {
+    background-color: #4a90e2; 
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #7f3fbf;
+}
+
+/* Estilos de las secciones */
+section {
+    padding: 20px;
+    text-align: center;
+}
+
+section#inicio {
+    background-color: #ffffff;
+}
+
+section#productos {
+    background-color: #e0e0e0;
+}
+
+section#contacto {
+    background-color: #ffffff;
+}
+
+/* Estilos de imágenes */
+img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Estilos de listas */
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    text-align: left;
+}
+
+/* Estilos de botones */
+button {
+    background-color: #7f3fbf; 
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #4a90e2; 
+}
+
+/* para responsividad */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    section {
+        padding: 15px;
+    }
+}
+ body{  background: linear-gradient(135deg, #3a8ee6, #ff77cc);}

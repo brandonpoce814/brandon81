@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aprender HTML</title>
+  <link rel="stylesheet" href="ESTILOS3.CSS">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #4a90e2, #7f3fbf);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      overflow-x: hidden;
+    }
+
+    .contenido {
+      max-width: 900px;
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 25px;
+      border-radius: 15px;
+      backdrop-filter: blur(5px);
+    }
+
+    h1, h2 {
+      text-align: center;
+    }
+
+    ul {
+      list-style: disc;
+      padding-left: 20px;
+      line-height: 1.7;
+    }
+
+    img, video {
+      width: 100%;
+      max-width: 600px;
+      margin: 20px auto;
+      border-radius: 10px;
+      display: block;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 1s ease;
+    }
+
+    img.visible, video.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    a {
+      color: #ffe6ff;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2em;
+      }
+
+      .contenido {
+        padding: 15px;
+      }
+    }
+
+    canvas#fondo {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="fondo"></canvas>
+
+<div class="contenido">
+  <h1>¿Cómo Aprender HTML?</h1>
+
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/320px-HTML5_logo_and_wordmark.svg.png" alt="Logo de HTML5">
+
+  <p>HTML (HyperText Markup Language) es el lenguaje base de todas las páginas web. Define la estructura del contenido, como encabezados, párrafos, listas, enlaces e imágenes.</p>
+
+  <h2>📘 ¿Por qué aprender HTML?</h2>
+  <ul>
+    <li>Es el primer paso para crear páginas web.</li>
+    <li>Fácil de aprender y entender.</li>
+    <li>Te permite controlar la estructura del contenido.</li>
+    <li>Es esencial junto a CSS y JavaScript para desarrollo web.</li>
+  </ul>
+
+  <video controls width="400" height="400" autoplay loop muted src="Video de WhatsApp 2025-05-27 a las 21.21.11_555b003b.mp4"></video>
+
+  <h2>📘 Guía rápida de inicio</h2>
+  <ul>
+    <li>1️⃣ Aprende la estructura básica: <h4>`html`, `head`, `body`</h4></li>
+    <li>2️⃣ Usa etiquetas comunes: `h1`, `p`, `img`, `a`, `ul`, `li`.</li>
+    <li>3️⃣ Crea una pequeña página con texto e imágenes.</li>
+    <li>4️⃣ Usa VS Code u otro editor para practicar.</li>
+    <li>5️⃣ Sube tu código a GitHub o pruébalo en CodePen.</li>
+  </ul>
+
+  <h2>📘 Recursos gratuitos para practicar</h2>
+  <ul>
+    <li><a href="https://www.w3schools.com/html/" target="_blank">W3Schools - HTML Tutorial</a></li>
+    <li><a href="https://developer.mozilla.org/es/docs/Web/HTML" target="_blank">MDN Web Docs - HTML</a></li>
+    <li><a href="https://www.youtube.com/watch?v=epDCjksKMok" target="_blank">Curso HTML desde cero - YouTube</a></li>
+  </ul>
+
+  <img src="cae29b_35a330bf77d84fa382b62ea84675cb02~mv2.webp" alt="Ejemplo de código HTML">
+</div>
+
+<script>
+  // Fondo animado con partículas
+  const canvas = document.getElementById('fondo');
+  const ctx = canvas.getContext('2d');
+  let width = canvas.width = window.innerWidth;
+  let height = canvas.height = window.innerHeight;
+
+  let particulas = [];
+  for (let i = 0; i < 50; i++) {
+    particulas.push({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      r: Math.random() * 2 + 1,
+      dx: (Math.random() - 0.5) * 0.5,
+      dy: (Math.random() - 0.5) * 0.5
+    });
+  }
+
+  function animar() {
+    ctx.clearRect(0, 0, width, height);
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.15)';
+    particulas.forEach(p => {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fill();
+      p.x += p.dx;
+      p.y += p.dy;
+
+      if (p.x < 0 || p.x > width) p.dx *= -1;
+      if (p.y < 0 || p.y > height) p.dy *= -1;
+    });
+    requestAnimationFrame(animar);
+  }
+
+  animar();
+
+  window.addEventListener('resize', () => {
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
+  });
+
+  // Animación de imágenes y videos al hacer scroll
+  const elementos = document.querySelectorAll('img, video');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  elementos.forEach(el => {
+    observer.observe(el);
+  });
+</script>
+
+</body>
+</html>

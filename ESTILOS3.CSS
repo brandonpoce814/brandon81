@@ -1,0 +1,234 @@
+
+
+/* Estilo general */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo del encabezado y menú */
+header {
+    background-color: #333; /* Color de fondo del menú */
+}
+
+.navbar {
+    display: flex;
+    justify-content: center; /* Centra el contenido del menú */
+}
+
+.menu {
+    list-style-type: none; /* Elimina los puntos de la lista */
+    padding: 0;
+}
+
+.menu li {
+    display: inline; /* Muestra los elementos en línea */
+}
+
+.menu a {
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    color: white; /* Color del texto */
+    padding: 15px 20px; /* Espaciado interno */
+    transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
+}
+
+/* Efecto al pasar el cursor */
+.menu a:hover {
+    background-color: #555; /* Color de fondo al pasar el cursor */
+}
+
+/* Estilo para las secciones */
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+/* Estilo del pie de página */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333; /* Color de fondo del pie de página */
+    color: white; /* Color del texto en el pie de página */
+}
+
+
+
+
+
+/* Estilo general */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo del encabezado */
+header {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Estilo del botón */
+.animated-button {
+    background-color: #4CAF50; /* Color de fondo */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    padding: 15px 30px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño de fuente */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Transiciones suaves */
+}
+
+/* Efecto al pasar el cursor sobre el botón */
+.animated-button:hover {
+    background-color: #45a049; /* Color de fondo más oscuro */
+    transform: scale(1.1); /* Aumenta el tamaño del botón */
+}
+
+/* Estilo de la imagen animada */
+.animated-image {
+    width: 300px; /* Ancho de la imagen */
+    opacity: 0; /* Comienza invisible */
+    transform: translateY(20px); /* Desplaza la imagen hacia abajo */
+    animation: fadeInUp 1s forwards; /* Llama a la animación al cargar */
+}
+
+/* Definición de la animación fadeInUp */
+@keyframes fadeInUp {
+    to {
+        opacity: 1; /* La imagen se vuelve visible */
+        transform: translateY(0); /* La imagen vuelve a su posición original */
+    }
+}
+
+/* Estilo del pie de página */
+footer {
+    text-align: center;
+    padding: 10px;
+}
+
+
+
+
+/* Estilo general */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto; /* Centra el contenedor */
+    padding: 20px;
+}
+
+/* Estilo para imágenes */
+img {
+    max-width: 100%; /* Hace que la imagen sea responsiva */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
+/* Estilo para videos */
+video {
+    max-width: 100%; /* Hace que el video sea responsivo */
+    height: auto; /* Mantiene la proporción del video */
+}
+
+/* Estilo para el texto */
+h1, h2, h3 {
+    margin: 20px 0;
+}
+
+/* Estilo para párrafos */
+p {
+    line-height: 1.6; /* Mejora la legibilidad */
+}
+
+/* Diseño de columnas usando flexbox */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col {
+    flex: 1;
+    padding: 10px; /* Espaciado interno */
+}
+
+/* Media queries para dispositivos pequeños */
+@media (max-width: 768px) {
+    .col {
+        flex-basis: 100%; /* Las columnas ocupan el ancho completo en pantallas pequeñas */
+    }
+}
+
+
+
+
+    @media (max-width: 480px) {
+            nav {
+                flex-direction: column;
+                align-items: center; 
+                text-align: center; 
+            }
+            .service {
+                width: 100%; /* Un servicio por fila */
+                margin-bottom: 15px; /* Espacio entre servicios */
+            }
+        }
+         /* Consultas de medios para pantallas más pequeñas */
+        @media (max-width: 768px) {
+            .service {
+                width: 45%; /* Dos servicios por fila */
+            }
+        }
+        .services {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap; /* Permite que los servicios se ajusten en varias líneas */
+            margin-top: 20px;
+        }
+        .service {
+            background-color: white;
+            border-radius: 5px;
+            padding: 15px;
+            width: 30%;
+            margin-bottom: 20px; 
+        }
+         ul {
+        list-style-type: none; /* Elimina los puntos de la lista */
+        padding: 0; /* Elimina el padding */
+        margin: 20px; /* Margen alrededor de la lista */
+    }
+    
+     li {
+        background-color: #0011ff1e; /* Color de fondo para cada opción */
+        border: 1px solid #00ff2a; /* Borde alrededor de cada opción */
+        border-radius: 5px; /* Bordes redondeados */
+        padding: 10px; /* Espaciado interno */
+        margin-bottom: 10px; 
+        transition: background-color 0.3s, transform 0.3s; 
+    }
+    
+    ul li:hover {
+        background-color: #c0ae0a; 
+        transform: scale(1.02); }
+        h2 {
+            font-family: 'Arial', sans-serif; 
+            font-size: 3em; 
+            color: #fffb00; 
+            text-align: center; 
+            text-transform: uppercase; 
+            letter-spacing: 2px; 
+            margin: 20px 0; 
+            padding: 10px; 
+            background-color: #00ff6a4d; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  
+        }
